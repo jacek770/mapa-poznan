@@ -208,7 +208,7 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Jezioro </b><br>Jezioro Maltańskie, potocznie zwane Maltą, powstało w 1952 roku w wyniku spiętrzenia rzeki Cybina');
-   L.marker([52.40587934548306, 16.947705786253216], {
+   L.marker([52.405645008200416, 16.948077509829563], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -228,7 +228,26 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Most </b><br>Mosty Berdychowskie to dwie nowoczesne kładki pieszo - rowerowe które przerzucono nad Wartą oraz Cybiną, otwarte 28 lutego 2025 roku.');
-
+    L.marker([52.41158460088062, 16.9509446734093], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="blue"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [30, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Most </b><br>Most Biskupa Jordana łączy historyczny Ostrów Tumski ze Śródką');
 
 </script>
 
