@@ -248,6 +248,26 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Most </b><br>Most Biskupa Jordana łączy historyczny Ostrów Tumski ze Śródką');
+   L.marker([52.411568519223735, 16.948762444112198], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="#D4AF37"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [30, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Katedra </b><br>Bazylika Archikatedralna św. Apostołów Piotra i Pawła to najstarsza Polska katedra ');
 
 </script>
 
