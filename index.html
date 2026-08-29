@@ -7,13 +7,20 @@
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
   <style>
     html, body, #map {
       width: 100%;
       height: 100%;
       margin: 0;
+      padding: 0;
+    }
+
+    .custom-marker {
+      background: red;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 3px solid white;
     }
   </style>
 </head>
@@ -22,8 +29,9 @@
 
 <div id="map"></div>
 
-<script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+<script>
   const map = L.map('map').setView([52.4064, 16.9252], 13);
 
   L.tileLayer(
@@ -33,34 +41,29 @@
     }
   ).addTo(map);
 
-  L.marker([52.408, 16.934])
-    .addTo(map)
-    .bindPopup('<b>Ratusz 1</b><br>to jeden z najcenniejszych zabytków renesansowych w Europie');
+  const redIcon = L.divIcon({
+    className: 'custom-marker',
+    iconSize: [26, 26],
+    iconAnchor: [13, 13]
+  });
 
-  L.marker([52.402, 16.912])
-    .addTo(map)
-    .bindPopup('<b>Mural 2</b><br>Poznań');
+  L.marker([52.408, 16.934], {
+    icon: redIcon
+  })
+  .addTo(map)
+  .bindPopup('<b>Mural 1</b><br>Stary Rynek');
 
-  L.marker([52.408404, 16.957374])
-.addTo(map)
-    .bindPopup('<b>Pomnik </b><br>Pomnik lokomotywa Tx26-423');
+  L.marker([52.402, 16.912], {
+    icon: redIcon
+  })
+  .addTo(map)
+  .bindPopup('<b>Mural 2</b><br>Poznań');
 
-  L.marker([52.407582, 16.955718])
-    .addTo(map)
-    .bindPopup('<b>Pomnik </b><br>Kotwica upamiętniająca statek SS Poznań');
-
-  L.marker([52.407770, 16.956728])
-    .addTo(map)
-    .bindPopup('<b>Jaz </b><br>Jaz Cybiński mający na celu spiętrzenie wody. Powstał w drugiej połowie XIX w.');
-
-  L.marker([52.402, 16.912])
-    .addTo(map)
-    .bindPopup('<b>Mural </b><br>Poznań');
-
-  L.marker([52.398542, 16.953809])
-    .addTo(map)
-    .bindPopup('<b>Lucie </b><br>Rzeźba dziewczynki przed centrum handlowym Posnania w Poznaniu to monumentalna instalacja zatytułowana „Lucie”');
-
+  L.marker([52.391, 16.953], {
+    icon: redIcon
+  })
+  .addTo(map)
+  .bindPopup('<b>Mural 3</b><br>Posnania');
 </script>
 
 </body>
