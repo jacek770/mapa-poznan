@@ -77,7 +77,21 @@ L.marker([52.408404, 16.957374], {
   })
 })
 .addTo(map)
-.bindPopup('<b>Pomnik</b><br>Pomnik lokomotywa Tx26-423');
+.bindPopup('<b>Pomnik</b><br>Pomnik lokomotywa Tx26-423
+           <a href="https://www.google.com/maps/dir/?api=1&destination=52.408404,16.957374"
+     target="_blank"
+     style="
+       display:inline-block;
+       background:#4285F4;
+       color:white;
+       padding:8px 14px;
+       border-radius:8px;
+       text-decoration:none;
+       font-weight:bold;
+     ">
+    🧭 PROWADŹ
+  </a>
+');
 
   L.marker([52.407582, 16.955718], {
   icon: L.divIcon({
