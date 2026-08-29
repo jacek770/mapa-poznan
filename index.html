@@ -53,9 +53,14 @@
   .addTo(map)
   .bindPopup('<b>Mural 1</b><br>Stary Rynek');
 
-  L.marker([52.402, 16.912], {
-    icon: redIcon
+  L.marker([52.408404, 16.957374], {
+  icon: L.divIcon({
+    className: 'custom-marker',
+    html: '<div style="background:orange; width:20px; height:20px; border-radius:50%; border:3px solid white;"></div>',
+    iconSize: [26, 26],
+    iconAnchor: [13, 13]
   })
+})
   .addTo(map)
   .bindPopup('<b>Mural 2</b><br>Poznań');
 
