@@ -174,7 +174,7 @@ L.marker([52.408404, 16.957374], {
       <svg width="30" height="38" viewBox="0 0 40 50">
         <path
           d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
-          fill="red"
+          fill="brown"
           stroke="white"
           stroke-width="2"/>
         <circle cx="20" cy="18" r="6" fill="white"/>
@@ -187,6 +187,27 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Muzeum </b><br>Muzeum Narodowe w Poznaniu prezentuje liczne polskie i europejskie obrazy, dzieła sztuki użytkowej oraz monety');
+
+   L.marker([52.40323992549738, 16.967611191234187], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="blue"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [30, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Jezioro </b><br>Jezioro Maltańskie, potocznie zwane Maltą, powstało w 1952 roku w wyniku spiętrzenia rzeki Cybina');
 
 </script>
 
