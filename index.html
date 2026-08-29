@@ -41,21 +41,17 @@
     .addTo(map)
     .bindPopup('<b>Mural 2</b><br>Poznań');
 
-  L.marker([52.408404, 16.957374], {
+L.marker([52.408404, 16.957374], {
   icon: L.divIcon({
-    className: 'custom-pin',
+    className: '',
     html: `
       <svg width="40" height="50" viewBox="0 0 40 50">
         <path
-          d="M20 48
-             C20 48 37 30 37 17
-             C37 8 30 2 20 2
-             C10 2 3 8 3 17
-             C3 30 20 48 20 48Z"
-          fill="orange"
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="#ff6600"
           stroke="white"
           stroke-width="2"/>
-        <circle cx="20" cy="17" r="6" fill="white"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
       </svg>
     `,
     iconSize: [40, 50],
