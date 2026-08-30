@@ -17,14 +17,16 @@
     }
   
   .przycisk {
-  display:inline-block;
-       background:#4285F4;
-       color:white;
-       padding:8px 14px;
-       border-radius:8px;
-       text-decoration:none;
-       font-weight:bold;
-  }
+  display: inline-block;
+  background: #4285F4;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
     </style>
 </head>
 
@@ -62,12 +64,13 @@
   })
 })
     .addTo(map)
-   .bindPopup(
+.bindPopup(
   '<b>Ratusz</b><br>' +
-  'To jeden z najcenniejszych zabytków renesansowych w Europie. ' +
-  'Od wschodniej strony codziennie o godzinie 12:00 stukają się koziołki.' +
+  'To jeden z najcenniejszych zabytków renesansowych w Europie.' +
   '<br><br>' +
-  '<a href="https://www.google.com/maps/dir/?api=1&destination=52.408518,16.934219" class="przycisk">PROWADŹ</a>'
+  '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.408518,16.934219\', \'_blank\')">' +
+  '🧭 PROWADŹ' +
+  '</button>'
 );
 L.marker([52.408404, 16.957374], {
   icon: L.divIcon({
