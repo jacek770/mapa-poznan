@@ -93,7 +93,7 @@
 });
 
 
-L.marker([52.408404, 16.957374], {
+const pomnik = L.marker([52.408404, 16.957374], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -120,8 +120,13 @@ L.marker([52.408404, 16.957374], {
   '🧭 PROWADŹ' +
   '</button>'
 );
+  punkty.push({
+  marker: pomnik,
+  tekst: 'lokomotywa pomnik'
+});
 
-  L.marker([52.407582, 16.955718], {
+
+  const pomnik = L.marker([52.407582, 16.955718], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -141,8 +146,13 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Pomnik </b><br>Kotwica upamiętniająca statek SS Poznań');
+  punkty.push({
+  marker: pomnik,
+  tekst: 'pomnik kotwica statek'
+});
 
-  L.marker([52.407770, 16.956728], {
+
+  const woda = L.marker([52.407770, 16.956728], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -162,12 +172,13 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Jaz </b><br>Jaz Cybiński mający na celu spiętrzenie wody. Powstał w drugiej połowie XIX wieku.');
+  punkty.push({
+  marker: woda,
+  tekst: 'jaz cybina malta most'
+});
 
-  L.marker([52.402, 16.912])
-    .addTo(map)
-    .bindPopup('<b>POOUUGHHDJJHDKJ </b><br>Poznań');
 
-  L.marker([52.398542, 16.953809], {
+  const rzeźba = L.marker([52.398542, 16.953809], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -187,6 +198,11 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Rzeżba </b><br>Rzeźba dziewczynki przed centrum handlowym Posnania w Poznaniu to monumentalna instalacja zatytułowana „Lucie”');
+  punkty.push({
+  marker: rzeźba,
+  tekst: 'lucie posanaia rzeźba dziewczynka pomnik'
+});
+
 
    L.marker([52.40807982839357, 16.93309611625419], {
   icon: L.divIcon({
