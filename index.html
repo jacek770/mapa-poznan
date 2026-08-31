@@ -47,11 +47,12 @@
 <body>
 
 <div id="map"></div>
+  <input id="searchBox" type="text" placeholder="🔍 Szukaj miejsca...">
 
 <script>
 
   const map = L.map('map').setView([52.4064, 16.9252], 13);
-  
+  const punkty = [];
 
   L.tileLayer(
     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -85,8 +86,12 @@
   '<br><br>' +
   '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.408518,16.934219\', \'_blank\')">' +
   '🧭 PROWADŹ' +
-  '</button>'
-);
+  '</button>' );
+  punkty.push({
+  marker: ratusz,
+  tekst: 'zabytek koziołki muzeum ratusz budynek rynek'
+});
+
 
 L.marker([52.408404, 16.957374], {
   icon: L.divIcon({
@@ -305,7 +310,29 @@ L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Katedra </b><br>Bazylika Archikatedralna św. Apostołów Piotra i Pawła to najstarsza Polska katedra ');
-  
+  document.getElementById('searchBox').addEventListener('input', function() {
+
+  const szukane = this.value.toLowerCase().trim();
+
+  punkty.forEach(function(punkt) {
+
+    if (szukane === '' || punkt.tekst.includes(szukane)) {
+
+      if (!map.hasLayer(punkt.marker)) {
+        punkt.marker.addTo(map);
+      }
+
+    } else {
+
+      if (map.hasLayer(punkt.marker)) {
+        map.removeLayer(punkt.marker);
+      }
+
+    }
+
+  });
+
+});
 </script>
 
 </body>
