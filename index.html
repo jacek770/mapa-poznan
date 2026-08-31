@@ -317,8 +317,7 @@ document.getElementById('searchBox').addEventListener('input', function() {
 
     if (
       szukane === '' ||
-      punkt.kategoria.includes(szukane) ||
-      punkt.nazwa.includes(szukane)
+      punkt.szukaj.toLowerCase().includes(szukane)
     ) {
       if (!map.hasLayer(punkt.marker)) {
         punkt.marker.addTo(map);
