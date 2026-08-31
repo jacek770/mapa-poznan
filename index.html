@@ -152,7 +152,7 @@ const pomnik = L.marker([52.408404, 16.957374], {
 });
 
 
-  const woda = L.marker([52.407770, 16.956728], {
+  const jazcybina = L.marker([52.407770, 16.956728], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -173,12 +173,12 @@ const pomnik = L.marker([52.408404, 16.957374], {
     .addTo(map)
     .bindPopup('<b>Jaz </b><br>Jaz Cybiński mający na celu spiętrzenie wody. Powstał w drugiej połowie XIX wieku.');
   punkty.push({
-  marker: woda,
+  marker: jazcybina,
   tekst: 'jaz cybina malta most'
 });
 
 
-  const rzeźba = L.marker([52.398542, 16.953809], {
+  const rzeźbaposnania = L.marker([52.398542, 16.953809], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -199,12 +199,12 @@ const pomnik = L.marker([52.408404, 16.957374], {
     .addTo(map)
     .bindPopup('<b>Rzeżba </b><br>Rzeźba dziewczynki przed centrum handlowym Posnania w Poznaniu to monumentalna instalacja zatytułowana „Lucie”');
   punkty.push({
-  marker: rzeźba,
-  tekst: 'lucie posanaia rzeźba dziewczynka pomnik'
+  marker: rzeźbaposnania,
+  tekst: 'lucie posnania rzeźba dziewczynka pomnik'
 });
 
 
-   L.marker([52.40807982839357, 16.93309611625419], {
+   const mpw = L.marker([52.40807982839357, 16.93309611625419], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -224,8 +224,12 @@ const pomnik = L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Muzeum </b><br>Muzeum Powstania Wielkopolskiego');
-
-   L.marker([52.40911041559376, 16.929649674427324], {
+    punkty.push({
+  marker: mpw,
+  tekst: 'muzeum budynek rynek powstanie wielkopolskie wojna'
+});
+  
+   const mn = L.marker([52.40911041559376, 16.929649674427324], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -245,8 +249,12 @@ const pomnik = L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Muzeum </b><br>Muzeum Narodowe w Poznaniu prezentuje liczne polskie i europejskie obrazy, dzieła sztuki użytkowej oraz monety');
+    punkty.push({
+  marker: mn,
+  tekst: 'muzeum narodowe obrazy sztuka budynek '
+});
 
-   L.marker([52.40323992549738, 16.967611191234187], {
+  const jm L.marker([52.40323992549738, 16.967611191234187], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -266,7 +274,11 @@ const pomnik = L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Jezioro </b><br>Jezioro Maltańskie, potocznie zwane Maltą, powstało w 1952 roku w wyniku spiętrzenia rzeki Cybina');
-   L.marker([52.405645008200416, 16.948077509829563], {
+    punkty.push({
+  marker: jm,
+  tekst: 'jezioro maltańskie malta woda'
+});
+  const mb L.marker([52.405645008200416, 16.948077509829563], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -286,7 +298,11 @@ const pomnik = L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Most </b><br>Mosty Berdychowskie to dwie nowoczesne kładki pieszo - rowerowe które przerzucono nad Wartą oraz Cybiną, otwarte 28 lutego 2025 roku.');
-    L.marker([52.41158460088062, 16.9509446734093], {
+      punkty.push({
+  marker: mb,
+  tekst: 'mosty berdychowskie kładka droga pieszo-rowerowa most'
+});
+  const mbj = L.marker([52.41158460088062, 16.9509446734093], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -306,7 +322,11 @@ const pomnik = L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Most </b><br>Most Biskupa Jordana łączy historyczny Ostrów Tumski ze Śródką');
-   L.marker([52.411568519223735, 16.948762444112198], {
+    punkty.push({
+  marker: mbj,
+  tekst: 'most biskupa jordana ostrów tumski śródka'
+});
+   const ka =L.marker([52.411568519223735, 16.948762444112198], {
   icon: L.divIcon({
     className: '',
     html: `
@@ -326,6 +346,10 @@ const pomnik = L.marker([52.408404, 16.957374], {
 })
     .addTo(map)
     .bindPopup('<b>Katedra </b><br>Bazylika Archikatedralna św. Apostołów Piotra i Pawła to najstarsza Polska katedra ');
+    punkty.push({
+  marker: ka,
+  tekst: 'katedra ostrów tumski sakralne budynek kościół'
+});
   document.getElementById('searchBox').addEventListener('input', function() {
 
   const szukane = this.value.toLowerCase().trim();
