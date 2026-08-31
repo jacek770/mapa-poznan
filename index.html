@@ -47,11 +47,11 @@
 <body>
 
 <div id="map"></div>
-<input id="searchBox" type="text" placeholder="🔍 Szukaj miejsca...">
+
 <script>
 
   const map = L.map('map').setView([52.4064, 16.9252], 13);
-  const punkty = [];
+  
 
   L.tileLayer(
     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -87,10 +87,7 @@
   '🧭 PROWADŹ' +
   '</button>'
 );
- punkty.push({
-  marker: ratusz,
-  szukaj: 'ratusz koziołki rynek budynek zabytek'
-});
+
 L.marker([52.408404, 16.957374], {
   icon: L.divIcon({
     className: '',
@@ -309,28 +306,7 @@ L.marker([52.408404, 16.957374], {
     .addTo(map)
     .bindPopup('<b>Katedra </b><br>Bazylika Archikatedralna św. Apostołów Piotra i Pawła to najstarsza Polska katedra ');
   
-document.getElementById('searchBox').addEventListener('input', function() {
 
-  const szukane = this.value.toLowerCase().trim();
-
-  punkty.forEach(function(punkt) {
-
-    if (
-      szukane === '' ||
-      punkt.szukaj.toLowerCase().includes(szukane)
-    ) {
-      if (!map.hasLayer(punkt.marker)) {
-        punkt.marker.addTo(map);
-      }
-    } else {
-      if (map.hasLayer(punkt.marker)) {
-        map.removeLayer(punkt.marker);
-      }
-    }
-
-  });
-
-});
 
 });
 </script>
