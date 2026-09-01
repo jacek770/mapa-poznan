@@ -593,6 +593,87 @@ const pomnik = L.marker([52.408404, 16.957374], {
   marker: sk,
   tekst: 'restauracja hotel kasyno koszary pasaz handlowy niemcy stare koszary'
 });
+  const bp =L.marker([52.41233141083022, 16.951636580087328], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="brown"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [15, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Brama Poznania</b><br>interaktywne muzeum opowiadające o początkach państwa polskiego oraz historii Ostrowa Tumskiego.' +
+              '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.41233141083022,16.951636580087328\', \'_blank\')">' +
+  'PROWADŹ' +
+  '</button>');
+    punkty.push({
+  marker: bp,
+  tekst: 'muzeum interaktywne budynek początki państwa polskiego ostrowa tumskiego'
+});
+  const im =L.marker([52.41138064577645, 16.95184302742646], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="yellow"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [15, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Instalacja Muzajka</b><br>to nietypowa instalacja umieszczona na kamienicy wydająca dzwięki podczas deszczu' +
+              '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.41138064577645,16.95184302742646\', \'_blank\')">' +
+  'PROWADŹ' +
+  '</button>');
+    punkty.push({
+  marker: im,
+  tekst: 'instalacja muzajka zielona symfonia mural muzyka mozajka'
+});
+  const ms =L.marker([52.41124832530916, 16.953460651796224], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="yellow"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [15, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Mural</b><br>„Opowieść śródecka z trębaczem na dachu i kotem w tle” to trójwymiarowy mural namalowany w 2015 roku.' +
+              '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.41124832530916,16.953460651796224\', \'_blank\')">' +
+  'PROWADŹ' +
+  '</button>');
+    punkty.push({
+  marker: ms,
+  tekst: 'mural opowieść kamienica trębacz kot'
+});
   document.getElementById('searchBox').addEventListener('input', function() {
 
   const szukane = this.value.toLowerCase().trim();
