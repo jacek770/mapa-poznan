@@ -454,9 +454,32 @@ const pomnik = L.marker([52.408404, 16.957374], {
               '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.40853589840078,16.90577922946639\', \'_blank\')">' +
   'PROWADŹ' +
   '</button>');
+  const pp =L.marker([52.40171380999329, 16.901005357246568], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="green"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [15, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Palmiarnia</b><br>największa palmiarnia w Polsce której historia zaczyna się w 1911 roku kiedy otwarto pierwszą część plamiarni. W czasie II WŚ obiekt został mocno zniszczony a w 1922 roku został otwarty współczesny kompleks. Obecnie palmiarnia z powodu modernizacji jest zamknięta.' +
+              '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.40171380999329,16.901005357246568\', \'_blank\')">' +
+  'PROWADŹ' +
+  '</button>');
     punkty.push({
-  marker: sz,
-  tekst: 'stare zoo zwierzęta'
+  marker: pp,
+  tekst: 'palmiarnia palma rośliny budynek'
 });
   document.getElementById('searchBox').addEventListener('input', function() {
 
