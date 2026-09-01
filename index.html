@@ -500,9 +500,59 @@ const pomnik = L.marker([52.408404, 16.957374], {
               '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.40577515643467, 16.92832656195142\', \'_blank\')">' +
   'PROWADŹ' +
   '</button>');
+  const zl =L.marker([52.4216652856123, 16.902893449878718], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="orange"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [15, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Zakochane Latarnie</b><br>to nietypowa instalacja umieszczona w Parku Sołackim.' +
+              '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.4216652856123,16.902893449878718\', \'_blank\')">' +
+  'PROWADŹ' +
+  '</button>');
     punkty.push({
-  marker: ksm,
-  tekst: 'kościół katolicki święty marcin świętego marcina budynek'
+  marker: zl,
+  tekst: 'latarnie pomnik ławka zakochana para miłość'
+});
+  const ckz =L.marker([52.407988684676745, 16.918490296240666], {
+  icon: L.divIcon({
+    className: '',
+    html: `
+      <svg width="30" height="38" viewBox="0 0 40 50">
+        <path
+          d="M20 49 C20 49 4 30 4 18 C4 8 11 2 20 2 C29 2 36 8 36 18 C36 30 20 49 20 49Z"
+          fill="brown"
+          stroke="white"
+          stroke-width="2"/>
+        <circle cx="20" cy="18" r="6" fill="white"/>
+      </svg>
+    `,
+    iconSize: [30, 38],
+    iconAnchor: [15, 38],
+    popupAnchor: [0, -38]
+  })
+})
+    .addTo(map)
+    .bindPopup('<b>Centrum Kultury Zamek</b><br>wzniesiono dla cesarza W ilhelma II w latach 1905 - 1910. Na zamku znajduje się Muzeum Powstania Poznańskiego - Czerwiec 1956, Kino Pałacowe, teatr oraz strefa gastronomiczna.' +
+              '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.407988684676745,16.918490296240666\', \'_blank\')">' +
+  'PROWADŹ' +
+  '</button>');
+    punkty.push({
+  marker: ckz,
+  tekst: 'zamek cesarski centrum kultury teatr kino muzeum powstania poznańskiego czerwca 1956'
 });
   document.getElementById('searchBox').addEventListener('input', function() {
 
