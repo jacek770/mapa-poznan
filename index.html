@@ -72,15 +72,21 @@
 });
   function p(lat, lng, tekst, ikona = gray) {
   const marker = L.marker([lat, lng], { icon: ikona }).addTo(map);
-  marker.bindPopup(tekst);
-  punkty.push({ marker, tekst: tekst.toLowerCase() });
-    L.marker([lat, lng])
-    .addTo(map)
-    .bindPopup(
-      html +
-      '<br><a class="prowadz" href="https://www.google.com/maps/dir/?api=1&destination=' +
-      lat + ',' + lng +
-      '" target="_blank">PROWADŹ</a>'
+
+  marker.bindPopup(
+    tekst +
+    '<br><br>' +
+    '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=' +
+    lat + ',' + lng +
+    '\', \'_blank\')">' +
+    'PROWADŹ' +
+    '</button>'
+  );
+
+  punkty.push({
+    marker: marker,
+    tekst: tekst.toLowerCase()
+  });
 }
 
   L.tileLayer(
