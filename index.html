@@ -41,7 +41,20 @@
   font-size: 16px;
   outline: none;
 }
-   const gray = L.divIcon({
+   
+    </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+  <input id="searchBox" type="text" placeholder="🔍 Szukaj miejsca...">
+
+<script>
+
+  const map = L.map('map').setView([52.4064, 16.9252], 13);
+  const punkty = [];
+  const gray = L.divIcon({
   className: '',
   html: `
     <svg width="30" height="38" viewBox="0 0 40 50">
@@ -57,18 +70,11 @@
   iconAnchor: [15, 38],
   popupAnchor: [0, -38]
 });
-    </style>
-</head>
-
-<body>
-
-<div id="map"></div>
-  <input id="searchBox" type="text" placeholder="🔍 Szukaj miejsca...">
-
-<script>
-
-  const map = L.map('map').setView([52.4064, 16.9252], 13);
-  const punkty = [];
+  function p(lat, lng, tekst, ikona = gray) {
+  const marker = L.marker([lat, lng], { icon: ikona }).addTo(map);
+  marker.bindPopup(tekst);
+  punkty.push({ marker, tekst: tekst.toLowerCase() });
+}
 
   L.tileLayer(
     'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -1284,54 +1290,9 @@ const pomnik = L.marker([52.408404, 16.957374], {
   marker: kkpwp,
   tekst: 'kościół katolicki pod wezwaniem wniebowstąpienia pańskiego parafia'
 });
-  const kkmbz = L.marker([52.439141112522584, 16.92562062713954], {
-  icon: gray
-})
-    .addTo(map)
-    .bindPopup('<b>Kościół Katolicki</b> Matki Boskiej Zwycięskiej<br>.' +
-               '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.439141112522584,16.92562062713954\', \'_blank\')">' +
-  'PROWADŹ' +
-  '</button>');
-      punkty.push({
-  marker: kkmbz,
-  tekst: 'kościół katolicki pod wezwaniem matki boskiej zwycięzkiej'
-});
-  const kksas = L.marker([52.43885544212901,16.94284175119958], {
-  icon: gray
-})
-    .addTo(map)
-    .bindPopup('<b>Kościół Katolicki</b> Świętych Aniołów Stróżów<br>.' +
-               '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.43885544212901,16.94284175119958\', \'_blank\')">' +
-  'PROWADŹ' +
-  '</button>');
-      punkty.push({
-  marker: kksas,
-  tekst: 'kościół katolicki pod wezwaniem świętych aniołów stróżów'
-});
-  const kcns = L.marker([52.443530152393414, 16.94731123482026], {
-  icon: gray
-})
-    .addTo(map)
-    .bindPopup('<b>Kościół Chrześcijański</b> Na Skale<br>.' +
-               '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.443530152393414,16.94731123482026\', \'_blank\')">' +
-  'PROWADŹ' +
-  '</button>');
-      punkty.push({
-  marker: kcns,
-  tekst: 'kościół chrześcijański na skale naramowice'
-});
-  const kkmbcz = L.marker([52.44771571972, 16.948410207280478], {
-  icon: gray
-})
-    .addTo(map)
-    .bindPopup('<b>Kościół Katolicki</b> Matki Boskiej Częstochowskiej<br>.' +
-               '<button class="przycisk" onclick="window.open(\'https://www.google.com/maps/dir/?api=1&destination=52.44771571972,16.948410207280478\', \'_blank\')">' +
-  'PROWADŹ' +
-  '</button>');
-      punkty.push({
-  marker: kkmbcz,
-  tekst: 'kościół katolicki pod wezwaniem matki boskiej częstochowskiej'
-});
+  p(52.439141112522584,16.92562062713954, '<b>Kościół Katolicki</b> Matki Boskiej Zwycięskiej<br>');
+  p(52.43885544212901,16.94284175119958, '<b>Kościół Katolicki</b> Świętych Aniołów Stróżów<br>');
+  p(52.4477349650858,16.948401185440765, '<b>Kościół Katolicki</b> Matki Boskiej Częstochowskiej<br>');
   document.getElementById('searchBox').addEventListener('input', function() {
 
   const szukane = this.value.toLowerCase().trim();
